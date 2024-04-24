@@ -1,0 +1,23 @@
+{
+  "list": [
+    {
+      "id": "1",
+      "applicationHostname": "new_app",
+      "timestamp": "2028-11-02T10:20:11.242Z",
+      "type": "WEB"
+    },
+    {
+      "id": "2",
+      "applicationHostname": "new_app",
+      "timestamp": "2028-11-04T15:12:46.242Z",
+      "type": "WEB"
+    },
+    {
+      "id": "3",
+      "applicationHostname": "new_app",
+      "timestamp": "2028-11-03T11:11:43.241Z",
+      "type": "MOBILE"
+    }
+  ],
+  "items": []
+}
