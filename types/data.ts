@@ -1,5 +1,5 @@
 export type TListItem = {
-    id: string;
+    id: number;
     applicationHostname: string;
     timestamp: string;
     type: 'WEB' | 'MOBILE';
@@ -12,7 +12,7 @@ export type TTag = {
 };
 
 export type TItem = {
-    id: string;
+    id: number;
     user: string;
     country: string;
     ip: string;

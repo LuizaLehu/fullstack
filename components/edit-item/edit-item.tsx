@@ -1,14 +1,18 @@
-
-import { useState } from 'react';
+"use client"
+import { useState } from "react";
 import { TListItem } from "@/types/data";
 import { editItem } from '@/repository';
 
 type EditItemProps = {
     item: TListItem;
     onEdit: () => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add onChange prop
+    onSave: () => Promise<void>;
+    onCancel: () => void;
 }
 
 const EditItemPage: React.FC<EditItemProps> = ({ item, onEdit }) => {
+    "use client"
     const [editedItem, setEditedItem] = useState(item);
     const [isEditing, setIsEditing] = useState(true);
 

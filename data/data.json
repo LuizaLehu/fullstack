@@ -19,5 +19,41 @@
       "type": "MOBILE"
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": "1",
+      "user": "Joe Smith",
+      "country": "UK",
+      "ip": "1.2.3.4",
+      "device": "Windows / Chrome 121.0",
+      "tags": [
+        {
+          "title": "ERROR",
+          "descriptions": "This is a description for the ERROR tag lorem ipsun dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "color": "#F17567"
+        }
+      ],
+      "isDangerous": true
+    },
+    {
+      "id": "2",
+      "user": "Jack Black",
+      "country": "USA",
+      "ip": "11.21.33.44",
+      "device": "MacOs / Firefox 101.2",
+      "tags": [
+        {
+          "title": "OK",
+          "descriptions": "This is a description for the OK tag ",
+          "color": "#6EB72F"
+        },
+        {
+          "title": "NEW",
+          "descriptions": "this is the NEW tag and it appears because lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "color": "#026FBC"
+        }
+      ],
+      "isDangerous": false
+    }
+  ]
 }

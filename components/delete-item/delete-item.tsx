@@ -1,9 +1,26 @@
-"use client"
 
-function DeleteComponent({ onDelete }) {
-    return (
-        <button onClick={onDelete}>Delete</button>
-    );
+"use client"
+import React from 'react';
+import { deleteItem } from '@/repository';
+
+type DeleteItemProps = {
+  id: number;
+  onDelete: () => void;
 }
 
-export default DeleteComponent;
+const DeleteItemPage: React.FC<DeleteItemProps> = ({ id, onDelete }) => {
+  const handleDelete = async () => {
+    try {
+      await deleteItem(id);
+      onDelete();
+    } catch (error) {
+      console.error('Error deleting item:', error);
+    }
+  };
+
+  return (
+    <button onClick={handleDelete}>Delete</button>
+  );
+};
+
+export default DeleteItemPage;

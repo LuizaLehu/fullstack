@@ -1,14 +1,9 @@
-
-"use client"
-
 //import { useLinkProps } from 'next/navigation';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { TListItem } from "@/types/data";
-import { getAll, deleteItem } from '@/repository';
+import { getAll, deleteItem, editItem } from '@/repository';
 import EditItemPage from '@/components/edit-item/edit-item';
 import DeleteItemPage from '@/components/delete-item/delete-item';
-import { useRouter } from 'next/router';
 import ListItem from '@/components/list-item/list-item';
 /*
 type ListItemProps = {
@@ -82,75 +77,50 @@ const ListItem: React.FC<ListItemProps> = ({ item, onDelete }) => {
 */
 // testez codul de jos
 
-export default function Home() {
-  const [data, setData] = useState<TListItem[]>([]);
-  //const [router, setRouter] = useState<any>(null);
-  const router = useRouter();
+export default async function Home() {
+  const data = await getAll()
 
-  /*useEffect(() => {
-    setRouter(require('next/router'));
-  }, []);  */
+  // const handleDelete = async (event: React.MouseEvent<HTMLButtonElement>, id: number) => {
+  //   event.preventDefault();
+  //   try {
+  //     await deleteItem(id);
+  //     fetchData();
+  //   } catch (error) {
+  //     console.error('Error deleting item:', error);
+  //   }
+  // };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedData = await getAll() as TListItem[];
-        setData(fetchedData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const handleItemClick = (id: number) => {
-    router.push(`/item/${id}`);
-  };
-
-
-  /* const handleDelete = () => {
-     fetchData(); // Update the list after deletion
-   };  */
-
-  const handleDelete = async (id: number) => {
-
-    try {
-      await deleteItem(id);
-      fetchData();
-    } catch (error) {
-      console.error('Error deleting item:', error);
-    }
-  };
-
-  const handleEdit = () => {
-
-    fetchData(); // Update the list after editing
-  };
+  // const handleEdit = async (id: number, newData: Partial<TListItem>) => {
+  //   try {
+  //     await editItem(id, newData);
+  //     fetchData();
+  //   } catch (error) {
+  //     console.error('Error editing item:', error);
+  //   }
+  // };
 
   return (
     <main>
-
       <ul>
         {data.map(item => (
           <ListItem
             key={item.id}
             item={item}
-            onDelete={handleDelete}
-            onEdit={handleEdit}
-            onItemClick={handleItemClick}
+          // onDelete={() => handleDelete(item.id)}
+          // onEdit={(newData: Partial<TListItem>) => handleEdit(item.id, newData)}
           />
         ))}
       </ul>
-      <Link href="/new-entry"> {/* Add Link component for navigation */}
-        <div className="add-entry-link">Add a new Entry</div>
+      <Link href="/form"> {/* Add Link component for navigation */}
+        <div className="add-form-link">Add a new Entry</div>
       </Link>
     </main>
   );
 }
 
+
+
 function fetchData() {
   throw new Error('Function not implemented.');
 }
-
 
