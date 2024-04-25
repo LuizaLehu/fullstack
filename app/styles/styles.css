@@ -1,0 +1,42 @@
+/* Center the main content */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+/* Style the list items */
+li {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+/* Style the buttons */
+button {
+  margin-right: 5px;
+}
+
+/* Style the "Add a new Entry" link */
+.add-entry-link {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.add-entry-link:hover {
+  background-color: #0056b3;
+}

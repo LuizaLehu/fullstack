@@ -1,4 +1,7 @@
-import { DeviceType } from "@/app/const";
+export enum DeviceType {
+    Mobile = 'MOBILE',
+    Web = 'WEB',
+}
 
 export type TListItem = {
     id: number;
@@ -14,11 +17,8 @@ export type TTag = {
     color: string;
 };
 
-export type TItem = {
+export type TItem = TListItem & {
     id: number;
-    applicationHostname: string;
-    timestamp: string;
-    type: DeviceType;
     user: string;
     country: string;
     ip: string;
@@ -28,6 +28,5 @@ export type TItem = {
 };
 
 export type TLogData = {
-    list: TListItem[];
     items: TItem[];
 };

@@ -1,28 +1,18 @@
-import { TListItem } from "@/types/data"
+import { TItem } from "@/types/data"
 import { getAll, deleteItem } from '@/repository'
-
-function ListItem(item: TListItem) {
-  return <li>
-    <div>{item.id}</div>
-    <div>{item.applicationHostname}</div>
-    <div>{item.timestamp}</div>
-    <div>{item.type}</div>
-    <button>EDIT</button>
-    <button>DELETE</button>
-
-  </li>
-}
-
+import ListItem from "@/components/list-item/list-item"
+import Link from "next/link";
 export default async function Home() {
-  const data = await getAll() as TListItem[]
+  const data = await getAll() as TItem[]
   console.log(data)
   const listItems = data.map(item =>
-    <ListItem {...item} />
+    <ListItem item={item} />
   );
 
   return (
     <main>
       <ul>{listItems}</ul>
+      <Link href="/new">Add</Link>
     </main>
   );
 }

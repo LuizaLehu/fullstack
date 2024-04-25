@@ -1,47 +1,19 @@
 import Link from 'next/link';
-import { TListItem } from "@/types/data";
+import { TItem } from "@/types/data";
 import { deleteItem } from '@/repository';
 import EditItemPage from '../edit-item/edit-item';
 import { editItem } from '@/repository';
 import { EditButton, DeleteButton } from '../buttons';
+
+
 type ListItemProps = {
-    item: TListItem;
-    onDelete: (id: number) => Promise<void>;
-    onEdit: (newData: Partial<TListItem>) => Promise<void>;
-    onItemClick: (id: number) => void;
+    item: TItem;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ item, onDelete, onEdit, onItemClick }) => {
-    const isEditing = false
-
-
-    const handleDelete = async () => {
-        try {
-            await deleteItem(item.id);
-            onDelete(item.id);
-        } catch (error) {
-            console.error('Error deleting item:', error);
-        }
-    };
-
-    const handleSaveEdit = async () => {
-        try {
-            //await onEdit(editedItem);
-            //onEdit();
-            //setIsEditing(false);
-        } catch (error) {
-            console.error('Error editing item:', error);
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        //  setEditedItem({ ...editedItem, [name]: value });
-    };
-
+const ListItem: React.FC<ListItemProps> = ({ item }) => {
 
     return (
-        <li className="list-group-item">
+        <li>
 
             <div>
                 <div>ID:{item.id}</div>
@@ -53,16 +25,11 @@ const ListItem: React.FC<ListItemProps> = ({ item, onDelete, onEdit, onItemClick
                 <EditButton id={item.id} />
                 <DeleteButton id={item.id} />
             </div>
-            <Link href={`/${item.id}`} className="btn btn-primary">Details</Link>
-            {/* {isEditing && (
-                    <EditItemPage
-                        item={editedItem}
-                        onChange={handleChange}
-                        onSave={handleSaveEdit}
-                        onCancel={() => setIsEditing(false)} onEdit={function (): void {
-                            throw new Error('Function not implemented.');
-                        }} />
-                )} */}
+
+            <Link href={`/${item.id}`}>
+                Details →
+            </Link>
+
         </li>
     );
 };
