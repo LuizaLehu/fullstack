@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { addNewItem, editItem } from '@/repository';
 import { TItem, DeviceType } from '@/types/data';
 
+
 type TEditItem = Omit<TItem, 'id'>
 
 const NewEntryForm = ({ item }: { item?: TItem }) => {
@@ -55,71 +56,73 @@ const NewEntryForm = ({ item }: { item?: TItem }) => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <div>
-          <label htmlFor="id">ID:</label>
+      <Form className="container mt-4">
+        <div className="mb-3">
+          <label htmlFor="id" className="form-label">ID:</label>
           <Field className="form-control" type="text" id="id" name="id" />
-          <ErrorMessage name="id" component="div" />
+          <ErrorMessage name="id" component="div" className="text-danger" />
         </div>
         <div>
-          <label htmlFor="applicationHostname">Application Hostname:</label>
-          <Field type="text" id="applicationHostname" name="applicationHostname" />
-          <ErrorMessage name="applicationHostname" component="div" />
+          <label htmlFor="applicationHostname" className="form-label">Application Hostname:</label>
+          <Field className="form-control" type="text" id="applicationHostname" name="applicationHostname" />
+          <ErrorMessage name="applicationHostname" component="div" className="text-danger" />
         </div>
         <div>
-          <label htmlFor="timestamp">Timestamp:</label>
-          <Field type="text" id="timestamp" name="timestamp" />
-          <ErrorMessage name="timestamp" component="div" />
+          <label htmlFor="timestamp" className="form-label">Timestamp:</label>
+          <Field className="form-control" type="text" id="timestamp" name="timestamp" />
+          <ErrorMessage name="timestamp" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="type">Type:</label>
-          <Field type="text" id="type" name="type" />
-          <ErrorMessage name="type" component="div" />
-        </div><div>
-          <label htmlFor="user">User:</label>
-          <Field type="text" id="user" name="user" />
-          <ErrorMessage name="user" component="div" />
+        <div className="mb-3">
+          <label htmlFor="type" className="form-label">Type:</label>
+          <Field className="form-control" type="text" id="type" name="type" />
+          <ErrorMessage name="type" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="country">Country:</label>
-          <Field type="text" id="country" name="country" />
-          <ErrorMessage name="country" component="div" />
+        <div className="mb-3">
+          <label htmlFor="user" className="form-label">User:</label>
+          <Field className="form-control" type="text" id="user" name="user" />
+          <ErrorMessage name="user" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="ip">IP:</label>
-          <Field type="text" id="ip" name="ip" />
-          <ErrorMessage name="ip" component="div" />
+        <div className="mb-3">
+          <label htmlFor="country" className="form-label">Country:</label>
+          <Field className="form-control bg-red" type="text" id="country" name="country" />
+          <ErrorMessage name="country" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="device">Device:</label>
-          <Field type="text" id="device" name="device" />
-          <ErrorMessage name="device" component="div" />
+        <div className="mb-3">
+          <label htmlFor="ip" className="form-label">IP:</label>
+          <Field className="form-control" type="text" id="ip" name="ip" />
+          <ErrorMessage name="ip" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="tagTitle">Tag Title:</label>
-          <Field type="text" id="tagTitle" name="tagTitle" />
-          <ErrorMessage name="tagTitle" component="div" />
+        <div className="mb-3">
+          <label htmlFor="device" className="form-label">Device:</label>
+          <Field className="form-control" type="text" id="device" name="device" />
+          <ErrorMessage name="device" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="tagDescription">Tag Description:</label>
-          <Field type="text" id="tagDescription" name="tagDescription" />
-          <ErrorMessage name="tagDescription" component="div" />
+        <div className="mb-3">
+          <label htmlFor="tagTitle" className="form-label">Tag Title:</label>
+          <Field className="form-control" type="text" id="tagTitle" name="tagTitle" />
+          <ErrorMessage name="tagTitle" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="tagColor">Tag Color:</label>
-          <Field type="text" id="tagColor" name="tagColor" />
-          <ErrorMessage name="tagColor" component="div" />
+        <div className="mb-3">
+          <label htmlFor="tagDescription" className="form-label">Tag Description:</label>
+          <Field className="form-control" type="text" id="tagDescription" name="tagDescription" />
+          <ErrorMessage name="tagDescription" component="div" className="text-danger" />
         </div>
-        <div>
-          <label htmlFor="isDangerous">Is Dangerous:</label>
-          <Field type="checkbox" id="isDangerous" name="isDangerous" />
-          <ErrorMessage name="isDangerous" component="div" />
+        <div className="mb-3">
+          <label htmlFor="tagColor" className="form-label">Tag Color:</label>
+          <Field className="form-control" type="text" id="tagColor" name="tagColor" />
+          <ErrorMessage name="tagColor" component="div" className="text-danger" />
         </div>
-
-        <button type="submit">Submit</button>
+        <div className="mb-3 form-check">
+          <input className="form-check-input" type="checkbox" id="isDangerous" name="isDangerous" />
+          <label className="form-check-label" htmlFor="isDangerous">
+            Is Dangerous
+          </label>
+        </div>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </Form>
     </Formik>
   );
+
 };
 
 export default NewEntryForm;  
