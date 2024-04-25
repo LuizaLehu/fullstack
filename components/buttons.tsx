@@ -1,21 +1,44 @@
 "use client"
-import { deleteItem } from "@/repository";
+import { deleteItem, editItem } from "@/repository";
 import { useRouter } from "next/navigation";
 import { revalidateTag } from 'next/cache'
+import { TListItem } from "@/types/data";
+import { DeviceType } from "@/app/const";
 
-type ButtonParans = {
-    id: number
-}
+type EditButtonProps = {
+    id: number;
+    onEdit: () => Promise<void>; // Add onEdit prop
+};
 
-export function EditButton({ id }: ButtonParans) {
+type DeleteButtonProps = {
+    id: number;
+};
 
-    const handleEdit = () => {
-        // setIsEditing(true);
+
+export function EditButton({ id, onEdit }: EditButtonProps) {
+    const router = useRouter();
+
+
+    const handleEdit = async () => {
+        try {
+            // Assume editedData contains the new data for the item
+            const editedData: Partial<TListItem> = {
+                applicationHostname: "updated_hostname",
+                timestamp: "2028-12-01T12:00:00.000Z",
+                type: "MOBILE" as DeviceType
+            };
+            await editItem(id, editedData);
+            await onEdit(); // Call the onEdit function passed from ListItem
+            router.refresh(); // Refresh the page to reflect changes
+        } catch (error) {
+            console.error('Error editing item:', error);
+        }
     };
+
     return <button onClick={handleEdit}>Edit</button>
 }
 
-export function DeleteButton({ id }: ButtonParans) {
+export function DeleteButton({ id }: DeleteButtonProps) {
     const router = useRouter()
 
     const handleDelete = async () => {
