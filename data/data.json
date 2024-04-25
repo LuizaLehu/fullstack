@@ -1,59 +1,11 @@
 {
   "list": [
     {
-      "id": "1",
-      "applicationHostname": "new_app",
-      "timestamp": "2028-11-02T10:20:11.242Z",
-      "type": "WEB"
-    },
-    {
-      "id": "2",
-      "applicationHostname": "new_app",
-      "timestamp": "2028-11-04T15:12:46.242Z",
-      "type": "WEB"
-    },
-    {
       "id": "3",
       "applicationHostname": "new_app",
       "timestamp": "2028-11-03T11:11:43.241Z",
       "type": "MOBILE"
     }
   ],
-  "items": [
-    {
-      "id": "1",
-      "user": "Joe Smith",
-      "country": "UK",
-      "ip": "1.2.3.4",
-      "device": "Windows / Chrome 121.0",
-      "tags": [
-        {
-          "title": "ERROR",
-          "descriptions": "This is a description for the ERROR tag lorem ipsun dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "color": "#F17567"
-        }
-      ],
-      "isDangerous": true
-    },
-    {
-      "id": "2",
-      "user": "Jack Black",
-      "country": "USA",
-      "ip": "11.21.33.44",
-      "device": "MacOs / Firefox 101.2",
-      "tags": [
-        {
-          "title": "OK",
-          "descriptions": "This is a description for the OK tag ",
-          "color": "#6EB72F"
-        },
-        {
-          "title": "NEW",
-          "descriptions": "this is the NEW tag and it appears because lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-          "color": "#026FBC"
-        }
-      ],
-      "isDangerous": false
-    }
-  ]
+  "items": []
 }

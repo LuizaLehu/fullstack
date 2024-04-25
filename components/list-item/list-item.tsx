@@ -41,7 +41,7 @@ const ListItem: React.FC<ListItemProps> = ({ item, onDelete, onEdit, onItemClick
 
 
     return (
-        <li>
+        <li className="list-group-item">
 
             <div>
                 <div>ID:{item.id}</div>
@@ -53,7 +53,7 @@ const ListItem: React.FC<ListItemProps> = ({ item, onDelete, onEdit, onItemClick
                 <EditButton id={item.id} />
                 <DeleteButton id={item.id} />
             </div>
-            <Link href={`/${item.id}`}> go </Link>
+            <Link href={`/${item.id}`} className="btn btn-primary">Details</Link>
             {/* {isEditing && (
                     <EditItemPage
                         item={editedItem}

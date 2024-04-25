@@ -5,7 +5,6 @@ import { TListItem } from '@/types/data';
 
 const ItemDetailsPage = async ({ params }: { params: { id: number } }) => {
   const item = await getItem(params.id)
-  console.log('wtf', item)
 
   return (
     item && <PageItem item={item} />
