@@ -53,9 +53,9 @@ const NewEntryForm = ({ item }: { item?: TItem }) => {
 
 
   return (
-    <div className="container-fluid vh-50 d-flex justify-content-center align-items-center bg-light">
-      <div className="card p-3 w-50">
-        <h2 className="mb-3 text-center">{item ? 'Edit Item' : 'Add New Item'}</h2>
+    <div className="container-fluid d-flex justify-content-center align-items-center bg-light style={{ height: '50vh' }}">
+      <div className="card p-3 w-50 form-container" style={{ backgroundColor: 'lightgray' }}>
+        <h2 className="mb-3 text-center text-primary">{item ? 'Edit Item' : 'Add New Item'}</h2>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -64,57 +64,57 @@ const NewEntryForm = ({ item }: { item?: TItem }) => {
           <Form>
             <div className="mb-3">
               <label htmlFor="id" className="form-label">ID:</label>
-              <Field className="form-control" type="text" id="id" name="id" />
+              <Field className="form-control form-control-sm" type="text" id="id" name="id" />
               <ErrorMessage name="id" component="div" className="text-danger" />
             </div>
             <div>
               <label htmlFor="applicationHostname" className="form-label">Application Hostname:</label>
-              <Field className="form-control form-control-lg bg-light" type="text" id="applicationHostname" name="applicationHostname" />
+              <Field className="form-control form-control-sm" type="text" id="applicationHostname" name="applicationHostname" />
               <ErrorMessage name="applicationHostname" component="div" className="text-danger" />
             </div>
             <div>
               <label htmlFor="timestamp" className="form-label">Timestamp:</label>
-              <Field className="form-control form-control-lg bg-light" type="text" id="timestamp" name="timestamp" />
+              <Field className="form-control form-control-sm bg-light" type="text" id="timestamp" name="timestamp" />
               <ErrorMessage name="timestamp" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="type" className="form-label">Type:</label>
-              <Field className="form-control" type="text" id="type" name="type" />
+              <Field className="form-control form-control-sm" type="text" id="type" name="type" />
               <ErrorMessage name="type" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="user" className="form-label">User:</label>
-              <Field className="form-control" type="text" id="user" name="user" />
+              <Field className="form-control form-control-sm" type="text" id="user" name="user" />
               <ErrorMessage name="user" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="country" className="form-label">Country:</label>
-              <Field className="form-control" type="text" id="country" name="country" />
+              <Field className="form-control form-control-sm" type="text" id="country" name="country" />
               <ErrorMessage name="country" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="ip" className="form-label">IP:</label>
-              <Field className="form-control" type="text" id="ip" name="ip" />
+              <Field className="form-control form-control-sm" type="text" id="ip" name="ip" />
               <ErrorMessage name="ip" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="device" className="form-label">Device:</label>
-              <Field className="form-control" type="text" id="device" name="device" />
+              <Field className="form-control form-control-sm" type="text" id="device" name="device" />
               <ErrorMessage name="device" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="tagTitle" className="form-label">Tag Title:</label>
-              <Field className="form-control" type="text" id="tagTitle" name="tagTitle" />
+              <Field className="form-control form-control-sm" type="text" id="tagTitle" name="tagTitle" />
               <ErrorMessage name="tagTitle" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="tagDescription" className="form-label">Tag Description:</label>
-              <Field className="form-control" type="text" id="tagDescription" name="tagDescription" />
+              <Field className="form-control form-control-sm" type="text" id="tagDescription" name="tagDescription" />
               <ErrorMessage name="tagDescription" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
               <label htmlFor="tagColor" className="form-label">Tag Color:</label>
-              <Field className="form-control" type="text" id="tagColor" name="tagColor" />
+              <Field className="form-control form-control-sm" type="text" id="tagColor" name="tagColor" />
               <ErrorMessage name="tagColor" component="div" className="text-danger" />
             </div>
             <div className="mb-3 form-check">

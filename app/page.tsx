@@ -17,10 +17,10 @@ export default async function Home() {
         {listItems.length > 0 ? (
           listItems
         ) : (
-          <li className="list-group-item font-weight-bold" >No items found</li>
+          <li className="list-group-item" >No items found</li>
         )}
       </ul>
-      <div className="mb-4">
+      <div className="mb-3">
         <Link href="/new">
           <p className="btn btn-primary mt-3">Add new item</p>
 
