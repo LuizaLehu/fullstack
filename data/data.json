@@ -1,27 +1,60 @@
 {
   "items": [
     {
-      "id": "4",
-      "applicationHostname": "new_app",
-      "timestamp": "2028-11-04T15:12:46.242Z",
+      "applicationHostname": "Chrome",
+      "timestamp": "2024-04-26T17:38:33.733Z",
       "type": "WEB",
-      "user": "Jack Black",
-      "country": "USA",
-      "ip": "00000000000",
-      "device": "MacOs / Firefox 101.2",
+      "user": "Marco Rossi Junior",
+      "country": "Italy",
+      "ip": "21.32.43.64",
+      "device": "Android / Firefox 99.0",
       "tags": [
         {
-          "title": "OK",
-          "descriptions": "This is a description for the OK tag ",
-          "color": "#6EB72F"
+          "title": "KO",
+          "descriptions": "This is a description for the KO tag ",
+          "color": "#EE5341"
         },
         {
-          "title": "NEW",
-          "descriptions": "this is the NEW tag and it appears because lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-          "color": "#026FBC"
+          "title": "SUSPICIOUS",
+          "descriptions": "this is the SUSPICIOUS tag and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "color": "#EE5341"
         }
       ],
-      "isDangerous": false
+      "isDangerous": true,
+      "tagTitle": "ERROR",
+      "tagDescription": "This a description on ERROR tag",
+      "tagColor": "#F17567",
+      "id": "3"
+    },
+    {
+      "applicationHostname": "Google",
+      "timestamp": "2028-11-04T15:12:46.242Z",
+      "type": "Web",
+      "user": "Martina",
+      "country": "USA",
+      "ip": "34455666",
+      "device": "MacOs",
+      "tags": [],
+      "isDangerous": false,
+      "tagTitle": "OK",
+      "tagDescription": "OK tag",
+      "tagColor": "#6EB72F",
+      "id": "9c502dd4-1e73-4514-b708-7b5582157579"
+    },
+    {
+      "applicationHostname": "tralala",
+      "timestamp": "2024-04-26T16:05:05.019Z",
+      "type": "WEB",
+      "user": "ffff",
+      "country": "fffff",
+      "ip": "gggg",
+      "device": "gggg",
+      "tags": [],
+      "isDangerous": false,
+      "tagColor": "gggg",
+      "tagDescription": "vvvv",
+      "tagTitle": "vvvv",
+      "id": "41065d5e-628f-4b75-90e3-9ea20b30f08c"
     }
   ]
 }

@@ -1,53 +1,68 @@
-import { TItem, TTag } from '@/types/data';
-import { DeleteButton, EditButton } from './buttons';
+import { TItem, TTag } from "@/types/data";
+import { DeleteButton, EditButton } from "./buttons";
+import { Tag } from "./tag";
+
+const textStyle = {
+  marginLeft: "20px",
+};
 
 export default function PageItem({ item }: { item: TItem }) {
+  return (
+    <div className="container-fluid mt-4">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card" style={{ backgroundColor: "lightgrey" }}>
+            <div className="card-body">
+              <h1 className="mb-4 text-center text-primary font-weight-bold display-6">
+                Item Details
+              </h1>
+              <p className="card-title" style={textStyle}>
+                ID: <strong>{item.id}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                Application Hostname:{" "}
+                <strong>{item.applicationHostname}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                Timestramp: <strong>{item.timestamp}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                Type: <strong>{item.type}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                User: <strong>{item.user}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                Country: <strong>{item.country}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                Ip: <strong>{item.ip}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                Device: <strong>{item.device}</strong>
+              </p>
+              <p className="card-text" style={textStyle}>
+                IsDangerous: <strong>{item.isDangerous}</strong>
+              </p>
+              {/* Tags */}
+              <div className="card-text" style={textStyle}>
+                Tags:
+              </div>
+              <ul className=" flex gap-4">
+                {item.tags.map((tag: TTag, index: number) => (
+                  <Tag {...tag} />
+                ))}
+              </ul>
 
-    const tagColors = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"];
-    const labelStyle = {
-        fontFamily: 'Arial, sans-serif',
-    };
-
-    return (
-        <div className="container mt-4">
-            <div className="row justify-content-center">
-                <div className="col-md-6"></div>
-                <div className="text-center">
-                    <h1>Item Details</h1>
-                </div>
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title" style={labelStyle}>ID: {item.id}</h5>
-                        <p className="card-text" style={labelStyle}>Hostname: {item.applicationHostname}</p>
-                        <p className="card-text" style={labelStyle}>Time: {item.timestamp}</p>
-                        <p className="card-text" style={labelStyle}>Type: {item.type}</p>
-                        <p className="card-text">User: {item.user}</p>
-                        <p className="card-text">Country: {item.country}</p>
-                        <p className="card-text">Ip: {item.ip}</p>
-                        <p className="card-text">Device: {item.device}</p>
-                        <p className="card-text">Type: {item.type}</p>
-                        <p className="card-text">IsDangerous: {item.isDangerous}</p>
-                        {/* Tags */}
-                        <div className="card-text">Tags:</div>
-                        {item.tags.map((tag: TTag, index: number) => (
-                            <div key={index} className={`card bg-${tagColors[index % tagColors.length]}`}>
-                                <div className="card-body">
-                                    <p className="card-text">Title: {tag.title}</p>
-                                    <p className="card-text">Descriptions: {tag.descriptions}</p>
-                                    <p className="card-text">Color: {tag.color}</p>
-                                </div>
-                            </div>
-                        ))}
-
-                        {/* Other details */}
-                        <div className="d-flex justify-content-between mt-4">
-                            <EditButton id={item.id} />
-                            <DeleteButton id={item.id} />
-                        </div>
-                    </div>
-                </div>
+              {/* Other details */}
+              <div className="flex justify-center gap-4 p-4">
+                <EditButton id={item.id} />
+                <DeleteButton id={item.id} />
+              </div>
             </div>
-
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
